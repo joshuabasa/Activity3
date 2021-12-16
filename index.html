@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Web Dev Activity 3</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="design.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Qahiri">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <main>
+        <div class="main">
+    
+
+    <div class = "nav-bar"> 
+        <ul>
+
+            <li><a href="index.html"><i class="fa fa-percent"></i> ℃ - ℉</a></li>
+            <li><a href="AreaofTri.html"><i class="fa fa-arrow-up"></i> A=hbb/2</a></li>
+            <li><a href="SquareR.html"><i class="fa fa-square-o"></i> √x</a></li>
+
+            
+        </ul>
+    </div>
+
+        <header>
+            <h1>Temperature Converter</h1>
+        </header>
+
+        <section class="inputs">
+        	<label>Celcius</label>
+            <input type="number" name="celcius" id="celcius" class="input" >
+            <label>Fahrenheit</label>
+            <input type="number" name="fahrenheit" id="fahrenheit" class="input" >
+        </section>
+    </main>
+
+<script type="text/javascript">
+const celciusInput = document.getElementById("celcius");
+const fahrenheitInput = document.getElementById("fahrenheit");
+const inputs = document.getElementsByClassName("input");
+
+for (let i = 0; i < inputs.length; i++) {
+    let input = inputs[i];
+
+    input.addEventListener("input", function (e) {
+        let value = parseFloat(e.target.value);
+        
+        switch (e.target.name) {
+            case "celcius":
+                fahrenheitInput.value = (value * 1.8) + 32;
+                kelvinInput.value = value + 273.15;
+                break;
+            case "fahrenheit":
+                celciusInput.value = (value - 32) / 1.8;
+                kelvinInput.value = ((value - 32) / 1.8) + 273.15;
+                break;
+        }
+    });
+}
+</script>
+</body>
+</html>

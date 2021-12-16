@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <title>Web Dev Activity 3</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="design.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Qahiri">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+
+</head>
+<div class = "nav-bar"> 
+        <ul>
+
+            <li><a href="index.html"><i class="fa fa-percent"></i> ℃ - ℉</a></li>
+            <li><a href="AreaofTri.html"><i class="fa fa-arrow-up"></i> A=hbb/2</a></li>
+            <li><a href="SquareR.html"><i class="fa fa-square-o"></i> √x</a></li>
+
+            
+        </ul>
+    </div>
+<body>
+
+<div class="container">
+	<h1>Find the Square Root</h1>
+		<label for="number">Please Enter a Number: </label>
+		<input type="number" id="number" class="input" >
+		<label for="numberText"> Result: </label>
+		<output id="numberText" ></output>
+   		<div class="buttonDiv"><input type="Submit" id="calculate" value="Calculate" > </div>
+</div>
+
+<script type="text/javascript">
+   	var number = document.getElementById("number");
+	var result = document.getElementById("numberText");
+
+function convert()
+{
+  var sqRoot = Math.sqrt(number.value);
+  result.innerHTML = sqRoot.toFixed(2);
+}
+
+function createEventListener()
+{
+  var calcBtn = document.getElementById("calculate");
+  
+  if (calcBtn.addEventListener)
+  {
+    calcBtn.addEventListener("click", convert, false);
+  }
+  else if (calcBtn.attachEvent)
+  {
+    calcBtn.attachEvent("onclick", convert);
+  }
+}
+
+if (window.addEventListener)
+{
+  window.addEventListener("load", createEventListener, false);
+}
+else if (window.attachEvent)
+{
+  window.attachEvent("onload", createEventListener);
+}
+</script>
+</body>
+</html>
